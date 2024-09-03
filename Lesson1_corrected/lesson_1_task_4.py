@@ -1,8 +1,5 @@
-# 1. Объявите функцию print_greeting().
-# 2. Тело функции: печать на экран выражения «Привет, мир!».
-# 3. Напишите код, который вызывает функцию print_greeting().
-# Объявление функции (def) должно быть в коде до ее вызова.
-
 def print_greeting():
-    print ("Hello, world!")
+    print("Hello, world!")
+
+
 print_greeting()
