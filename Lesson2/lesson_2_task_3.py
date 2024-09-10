@@ -1,12 +1,12 @@
 import math
 
 
-a = b = float(input("Сторона квадрата = "))
-c = math.ceil(a)*math.ceil(b)
+a = float(input("Сторона квадрата = "))
 
 
-def square():
-    print(f"Площадь квадрата = {c} см2")
+def square(a):
+    square = a*a
+    ceil_square = math.ceil(square)
+    return ceil_square
 
-
-square()
+print(f"Площадь квадрата = {square(a)} см2")
