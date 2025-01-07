@@ -26,3 +26,5 @@ src = driver.find_element(By.CSS_SELECTOR, "img#award")
 
 # Выведите значение в консоль.
 print(src.get_attribute("src"))
+
+driver.quit()
