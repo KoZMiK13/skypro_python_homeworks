@@ -32,6 +32,10 @@ final_res = calc.final_res()
 print("7+8 =", final_res)
 
 # Проверьте (assert), что в окне отобразится результат 15 через 45 секунд.
-assert final_res == 7+8
+
+
+def test_res():
+    assert final_res == 7+8
+
 
 driver.quit()

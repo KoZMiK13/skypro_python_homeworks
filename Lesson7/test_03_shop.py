@@ -6,7 +6,7 @@ from title_3.Login import Login
 from title_3.Shop import Shop
 from title_3.Cart import Cart
 from title_3.Information import Information
-from title_3.Oveview import Overview
+from title_3.Overview import Overview
 
 driver = webdriver.Chrome(
     service=ChromeService(ChromeDriverManager().install()))
@@ -48,6 +48,10 @@ total = overview.total()
 driver.close()
 
 # Проверьте, что итоговая сумма равна $58.29.
-assert total == "$58.29"
+
+
+def test_total():
+    assert total == "$58.29"
+
 
 driver.quit()
