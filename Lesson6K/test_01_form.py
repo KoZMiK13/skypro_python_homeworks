@@ -1,16 +1,12 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
-from time import sleep
-
 driver = webdriver.Chrome(service=ChromeService(
     ChromeDriverManager().install()))
-
-
 driver = webdriver.Chrome()
-
 
 # Откройте страницу: https://bonigarcia.dev/selenium-webdriver-java/data-types.html
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
@@ -50,13 +46,10 @@ country.send_keys("Россия")
 job_position.send_keys("QA")
 company.send_keys("SkyPro")
 
-
 # Нажмите кнопку Submit.
 submit.click()
 
 # Проверьте (assert), что поле Zip code подсвечено красным.
-
-red = "#842029"
 
 first_name = driver.find_element(By.CSS_SELECTOR, "#first-name")
 last_name = driver.find_element(By.CSS_SELECTOR, "#last-name")
@@ -69,12 +62,16 @@ country = driver.find_element(By.CSS_SELECTOR, "#country")
 job_position = driver.find_element(By.CSS_SELECTOR, "#job-position")
 company = driver.find_element(By.CSS_SELECTOR, "#company")
 
-print(zip_code.value_of_css_property("color"))
+red = zip_code.value_of_css_property("color")
+green = first_name.value_of_css_property("color")
+
+assert zip_code.value_of_css_property("color") == red
 
 # Проверьте (assert), что остальные поля подсвечены зеленым.
 
-green = "0F5132"
+elements = [first_name, last_name, address, email, phone_number, city, country, job_position, company]
 
-
+for element in elements:
+    assert element.value_of_css_property("color") == green
 
 driver.quit()
