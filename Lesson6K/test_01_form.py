@@ -4,8 +4,9 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
+driver = webdriver.Chrome(service=ChromeService(
+    ChromeDriverManager().install()))
 driver = webdriver.Chrome()
-
 
 # Откройте страницу: https://bonigarcia.dev/selenium-webdriver-java/data-types.html
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
@@ -44,7 +45,6 @@ city.send_keys("Москва")
 country.send_keys("Россия")
 job_position.send_keys("QA")
 company.send_keys("SkyPro")
-
 
 # Нажмите кнопку Submit.
 submit.click()
