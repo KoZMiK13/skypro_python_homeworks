@@ -4,8 +4,8 @@ from YouGileAPI import YouGileApi
 api = YouGileApi("https://ru.yougile.com")
 
 # вставить логин и пароль
-login = "kosmik13@mail.ru"
-password = "skypass"
+login = #вставить логин
+password = #вставить пароль
 company_name = "Constantine"
 company_id = api.get_company_id(login, password, company_name)
 keys_list = api.get_auth_keys(login, password, company_id)
