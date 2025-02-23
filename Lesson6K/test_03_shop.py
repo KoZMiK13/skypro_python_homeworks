@@ -9,7 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from time import sleep
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver = webdriver.Chrome(
+    service=ChromeService(ChromeDriverManager().install()))
 
 waiter = WebDriverWait(driver, 16)
 
@@ -29,15 +30,20 @@ driver.find_element(By.CSS_SELECTOR, "#login-button").click()
 # Sauce Labs Backpack.
 # Sauce Labs Bolt T-Shirt.
 # Sauce Labs Onesie.
-driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack").click()
-driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt").click()
-driver.find_element(By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie").click()
+driver.find_element(
+    By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack").click()
+driver.find_element(
+    By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt").click()
+driver.find_element(
+    By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie").click()
 
 # Перейдите в корзину.
-driver.find_element(By.CSS_SELECTOR, "#shopping_cart_container").click()
+driver.find_element(
+    By.CSS_SELECTOR, "#shopping_cart_container").click()
 
 # Нажмите Checkout.
-driver.find_element(By.CSS_SELECTOR, "#checkout").click()
+driver.find_element(
+    By.CSS_SELECTOR, "#checkout").click()
 
 # Заполните форму своими данными:
 # имя,
@@ -56,7 +62,10 @@ driver.find_element(By.CSS_SELECTOR, "#postal-code").send_keys(199406)
 driver.find_element(By.CSS_SELECTOR, "#continue").click()
 
 # Прочитайте со страницы итоговую стоимость (Total).
-total = list((driver.find_element(By.CSS_SELECTOR, "div.summary_total_label").text).split(" "))
+total = list(
+    (driver.find_element(
+        By.CSS_SELECTOR, "div.summary_total_label").text).split(" ")
+    )
 
 # Закройте браузер.
 driver.close()
