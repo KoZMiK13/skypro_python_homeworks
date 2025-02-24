@@ -9,6 +9,7 @@ driver = webdriver.Chrome(service=ChromeService(
 driver = webdriver.Chrome()
 
 # Откройте страницу: https://bonigarcia.dev/selenium-webdriver-java/data-types.html
+
 driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
 
 # Заполните форму значениями:
@@ -69,7 +70,17 @@ assert zip_code.value_of_css_property("color") == red
 
 # Проверьте (assert), что остальные поля подсвечены зеленым.
 
-elements = [first_name, last_name, address, email, phone_number, city, country, job_position, company]
+elements = [
+    first_name,
+    last_name,
+    address,
+    email,
+    phone_number,
+    city,
+    country,
+    job_position,
+    company
+    ]
 
 for element in elements:
     assert element.value_of_css_property("color") == green

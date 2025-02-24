@@ -9,12 +9,15 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from time import sleep
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver = webdriver.Chrome(
+    service=ChromeService(ChromeDriverManager().install()))
 
 waiter = WebDriverWait(driver, 16)
 
-# Откройте страницу: https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html
-driver.get("https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
+# Откройте страницу:
+# https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html
+driver.get(
+    "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html")
 
 # В поле ввода по локатору #delay введите значение 45.
 driver.find_element(By.CSS_SELECTOR, "#delay").clear()
