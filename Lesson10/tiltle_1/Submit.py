@@ -12,7 +12,7 @@ class Submit:
         submit_button = self.driver.find_element(
             By.CSS_SELECTOR, "button.btn")
         submit_button.click()
-    
+
     @allure.step("выбор элемента first name для возврата параметров цвета")
     def first_name(self):
         """

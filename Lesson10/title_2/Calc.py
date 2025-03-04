@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import allure
 
+
 class Calc:
     """
     класс для работы с калькуляором на странице. время ожидания перед выводом результата указывается в поле delay
@@ -14,7 +15,7 @@ class Calc:
             "https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html"
             )
 
-    @allure.step("выбор поля, очистка и заполнение временем ожидания {wait}")
+    @allure.step("выбор поля, очистка и заполнение временем ожидания - {wait}")
     def delay(self, wait: int):
         """
         выбор. очистка и заполнение поля ожидания (сек.)
@@ -46,7 +47,7 @@ class Calc:
     @allure.step("выбор и нажатие кнопки =")
     def result(self):
         """
-        выбор и нажатие кнопки = 
+        выбор и нажатие кнопки =
         """
         self._driver.find_element(By.XPATH, "//span[text()='=']").click()
 

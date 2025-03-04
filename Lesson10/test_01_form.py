@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from tiltle_1.DataTypes import DataTypes
 from tiltle_1.Submit import Submit
 
+
 @allure.epic("Главная страница")
 @allure.severity("minor")
 @allure.story("проверка цветов выдеоения полей при заполнении")
@@ -54,7 +55,7 @@ def test_colors():
     with allure.step("Проверить что поле Zip code подсвечено красным"):
         with allure.step("выбор элемента подсвеченного красным для установки параметров красного цвета"):
             red = submit.zip_code()
-        
+
         with allure.step("подтвердить что подсветка поля соответствует параметрам цвета поля подсвеченного красным цветом "):
             assert submit.zip_code() == red
 
@@ -62,7 +63,7 @@ def test_colors():
     with allure.step("Проверить что остальные поля подсвечены зеленым"):
         with allure.step("выбор элемента подсвеченного зеленым для установки параметров зеленого цвета"):
             green = submit.first_name()
-        
+
         with allure.step("формирование списка ос оставшимися параметрами элементов"):
             elements = [
                 submit.first_name(),
@@ -79,6 +80,5 @@ def test_colors():
         with allure.step("подтвердить что  подсветка каждого элемента списка соответствует параметрам цвета поля подсвеченным зеленым цветом "):
             for element in elements:
                 assert element == green
-    
-    
+
     browser.quit()

@@ -9,6 +9,7 @@ from title_3.Cart import Cart
 from title_3.Information import Information
 from title_3.Overview import Overview
 
+
 @allure.epic("Интернет магазин")
 @allure.severity("minor")
 @allure.story("Тестирование корзины")
@@ -62,6 +63,5 @@ def test_total():
     # Проверьте, что итоговая сумма равна $58.29.
     with allure.step("Проверить, что итоговая сумма равна $58.29."):
         assert total == "$58.29"
-
 
     driver.quit()

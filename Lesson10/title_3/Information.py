@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import allure
 
+
 class Information:
     """
     класс для работы с вэб элементами на странице с Информацией о покупателе"""
@@ -14,19 +15,19 @@ class Information:
         """
         заполнение полей first-name, last-name, postal-code и отправка введенной информации
         """
-        with allure.step("очистка и заполнение поля first-name {f_name} "):
+        with allure.step("очистка и заполнение поля first-name {f_name}"):
             self.driver.find_element(
                 By.CSS_SELECTOR, "#first-name").clear()
             self.driver.find_element(
                 By.CSS_SELECTOR, "#first-name").send_keys(f_name)
-            
-        with allure.step("очистка и заполнение поля last-name {l_name} "):
+
+        with allure.step("очистка и заполнение поля last-name {l_name}"):
             self.driver.find_element(
                 By.CSS_SELECTOR, "#last-name").clear()
             self.driver.find_element(
                 By.CSS_SELECTOR, "#last-name").send_keys(l_name)
-            
-        with allure.step("очистка и заполнение поля postal-code {zip} "):
+
+        with allure.step("очистка и заполнение поля postal-code {zip}"):
             self.driver.find_element(
                 By.CSS_SELECTOR, "#postal-code").clear()
             self.driver.find_element(

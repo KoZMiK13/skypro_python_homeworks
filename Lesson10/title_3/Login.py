@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import allure
 
+
 class Login:
     """
     класс для работы с веб элеменами на странице для прохождения авторизации

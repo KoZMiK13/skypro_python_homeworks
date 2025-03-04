@@ -3,8 +3,8 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
-
 from title_2.Calc import Calc
+
 
 @allure.epic("Калькулятор")
 @allure.severity("minor")
@@ -12,10 +12,12 @@ from title_2.Calc import Calc
 @allure.title("Проверка результата вычислений с ожиданием в соответствии с заданными параметрами")
 @allure.description("вычисления калькулятора с ожиданием")
 @allure.suite("Тест калькулятора")
-
 def test_res():
     driver = webdriver.Chrome(
-    service=ChromeService(ChromeDriverManager().install()))
+        service=ChromeService(
+            ChromeDriverManager().install()
+            )
+        )
 
     # Откройте страницу:
     # https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html
@@ -45,6 +47,5 @@ def test_res():
 
     with allure.step("Подтвердить, что полученный результат равен 7+8"):
         assert final_res == 7+8
-
 
     driver.quit()

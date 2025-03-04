@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import allure
 
+
 class Cart:
     """
     класс для работы с вэб-элементами корзины

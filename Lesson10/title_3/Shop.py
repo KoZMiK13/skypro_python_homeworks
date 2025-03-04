@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 import allure
 
+
 class Shop:
     """класс для работы с вэб-элементами на странице магазина
     """
